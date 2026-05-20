@@ -14,7 +14,7 @@ let dbData: CVData = {};
 
 async function loadDatabase() {
     try {
-        const response = await fetch("/data.json");
+        const response = await fetch("data.json");
         if (!response.ok) throw new Error("Failed to load file with data");
 
         dbData = await response.json();
