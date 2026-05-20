@@ -1,4 +1,5 @@
 import "./style.css";
+import topicData from "./data.json"
 
 //interfaces
 interface TopicItem{
@@ -16,12 +17,9 @@ const sidebarTitle = document.getElementById("sidebar-title") as HTMLHeadingElem
 let dbData: CVData = {};
 
 // Get Data from data.json
-async function loadDatabase() {
+function loadDatabase() {
     try {
-        const response = await fetch("data.json");
-        if (!response.ok) throw new Error("Failed to load file with data");
-
-        dbData = await response.json();
+        dbData = topicData;
         console.log("Database loaded successfuly!", dbData);
         InitLinksAndDescription();
     }
