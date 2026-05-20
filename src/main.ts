@@ -1,5 +1,6 @@
 import "./style.css";
 
+//interfaces
 interface TopicItem{
     title: string;
     description: string;
@@ -8,10 +9,13 @@ interface CVData{
     [key: string]: TopicItem[];
 }
 
+//variables
 const content = document.getElementById("content") as HTMLDivElement;
 const topicList = document.getElementById("topic-list") as HTMLUListElement;
+const sidebarTitle = document.getElementById("sidebar-title") as HTMLHeadingElement;
 let dbData: CVData = {};
 
+// Get Data from data.json
 async function loadDatabase() {
     try {
         const response = await fetch("data.json");
@@ -19,31 +23,42 @@ async function loadDatabase() {
 
         dbData = await response.json();
         console.log("Database loaded successfuly!", dbData);
+        InitLinksAndDescription();
     }
     catch(error) {
         console.log("Failed to load database", dbData);
     }
 }
 
+function InitLinksAndDescription() {
+    NavigationButtonClicked('About');
+}
+
+// Set functions to buttons
 const navigationBtns = [
-    { id: '#about-btn', action: () => NavigationButtonClicked('about') },
-    { id: '#education-btn', action: () => NavigationButtonClicked('education') },
-    { id: '#projects-btn', action: () => NavigationButtonClicked('projects') }
+    { id: '#about-btn', action: () => NavigationButtonClicked('About') },
+    { id: '#education-btn', action: () => NavigationButtonClicked('Education') },
+    { id: '#projects-btn', action: () => NavigationButtonClicked('Projects') }
 ];
 
 function NavigationButtonClicked(topic: string) {
+    // Clear lists
     if (topicList) topicList.innerHTML = "";
     if (content) content.innerHTML = "";
 
+    
     const topics = dbData[topic];
     if (topics) {
+        sidebarTitle.innerHTML = topic;
         topics.forEach(topic => AddNewTopic(topic));
+        // Setup first description as a default
         content.innerHTML = topics.at(0)?.description as string;
     } else { 
         console.warn(`There is no data in topic: ${topic}`)
     }
 }
 
+// Add Li
 function AddNewTopic(topic: TopicItem) {
     if (!topicList) return;
     const newLi = document.createElement('li') as HTMLLIElement;

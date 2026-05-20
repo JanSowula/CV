@@ -10,8 +10,9 @@ html {
 
     font-family: sans-serif, Arial, Helvetica;
     font-size: 100%;
+    color: #F8FAFC;
 
-    background-color: #213740;
+    background-color: #0F172A;
 }
 
 header {
@@ -23,7 +24,7 @@ header {
     height: 12vh;
 
     border-radius: 20px 20px 0px 0px;
-    background-color: rgb(205, 217, 226);
+    background-color: #334155;
 
     font-size: 350%;
     font-weight: bold;
@@ -38,9 +39,8 @@ nav {
     height: 8vh;
     padding: 2rem 0px 2rem 0px;
 
-    background-color: aliceblue;
+    background-color: #1E293B;
     border-radius: 20px 20px 0px 0px;
-
 }
 
 main {
@@ -54,36 +54,40 @@ main {
 
 aside {
     width: 20%;
+    padding: 1rem;
 
-    background-color: aliceblue;
+    background-color: #1E293B;
     border-radius: 0px 0px 0px 20px;
 }
 
 section {
     width: 80%;
+    padding: 1rem;
 
-    background-color: rgb(240, 248, 255);
+    background-color: #1E293B;
     border-radius: 0px 0px 20px 0px;
 }
 
 article {
-    height: 88.5%;
-    margin: 1rem;
+    height: 100%;
     padding: 1rem;
+    box-sizing: border-box;
 
     border-radius: 20px;
-    background-color: rgb(72, 84, 95);
+    background-color: #334155;
+
+    color: #F8FAFC;
 }
 
 .nav-btn {
     padding: 1.4rem;
 
-    background-color: rgb(205, 217, 226);
+    background-color: #334155;
     border: none;
     border-radius: 20px;
 
     text-decoration: none;
-    color: black;
+    color: #F8FAFC;
 
     font-size: clamp(0.5rem, 2.5vw, 2.5rem);
     font-weight: bold;
@@ -97,8 +101,19 @@ article {
     width: 90%;
     height: 5vh;
     margin: 0px;
-    padding-left: 1rem;
+    padding-left: 0.3rem;
 
-    background-color: rgb(108, 130, 148);
-    border-radius: 20px;
+    text-shadow: 2px 2px 2px grey;
+}
+
+#topic-list{
+    list-style-type: circle;
+}
+
+.nav-btn, li{
+    cursor: pointer;
+}
+
+li + li{
+    margin-top:1rem;
 }
