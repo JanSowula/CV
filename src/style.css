@@ -41,9 +41,6 @@ nav {
     background-color: aliceblue;
     border-radius: 20px 20px 0px 0px;
 
-    font-size: clamp(0.5rem, 2.5vw, 2.5rem);
-    font-weight: bold;
-
 }
 
 main {
@@ -56,49 +53,52 @@ main {
 }
 
 aside {
-    width: 25%;
-    padding: 0rem 1rem 1rem 1rem;
+    width: 20%;
 
     background-color: aliceblue;
-
     border-radius: 0px 0px 0px 20px;
 }
 
 section {
-    width: 100%;
-    padding: 0rem 1rem 1rem 1rem;
-    background-color: rgb(240, 248, 255);
+    width: 80%;
 
+    background-color: rgb(240, 248, 255);
     border-radius: 0px 0px 20px 0px;
 }
 
-article{
-    height: 95%;
-    border-radius: 20px;
+article {
+    height: 88.5%;
+    margin: 1rem;
     padding: 1rem;
 
+    border-radius: 20px;
     background-color: rgb(72, 84, 95);
 }
 
-a{
-    padding: 0.8rem;
+.nav-btn {
+    padding: 1.4rem;
 
     background-color: rgb(205, 217, 226);
+    border: none;
     border-radius: 20px;
 
     text-decoration: none;
     color: black;
+
+    font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+    font-weight: bold;
 }
 
-a:visited{
-    color:black;
-}
+#sidebar-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
 
+    width: 90%;
+    height: 5vh;
+    margin: 0px;
+    padding-left: 1rem;
 
-#sidebar-title{
-    padding: 1rem;
-    
     background-color: rgb(108, 130, 148);
-    
     border-radius: 20px;
 }

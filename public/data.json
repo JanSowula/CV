@@ -1,0 +1,15 @@
+{
+    "about": [
+        { "title": "JanSowula", "description": "Nazywam sie Jan Jaś Sowula"},
+        { "title": "Zainteresowania", "description": "Glownie programowanie i grafika"}
+    ],
+    "education": [
+        {"title": "Middle Schoold", "description": "Wolbrom"},
+        {"title": "University", "description": "Politechnika Poznańska"}
+    ],
+    "projects": [
+        {"title": "Inventory System", "description": " There is link for inventory system"},
+        {"title": "Top View game", "description": "Some screenshots from game"}
+    ]
+
+}
